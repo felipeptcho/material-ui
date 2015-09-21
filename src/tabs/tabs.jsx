@@ -18,6 +18,7 @@ let Tabs = React.createClass({
     initialSelectedIndex: React.PropTypes.number,
     inkBarStyle: React.PropTypes.object,
     tabItemContainerStyle: React.PropTypes.object,
+    tabTemplate: React.PropTypes.func,
   },
 
   getDefaultProps() {
@@ -68,6 +69,7 @@ let Tabs = React.createClass({
       style,
       tabWidth,
       tabItemContainerStyle,
+      tabTemplate,
       ...other,
     } = this.props;
 
@@ -101,7 +103,7 @@ let Tabs = React.createClass({
         }
 
         tabContent.push(tab.props.children ?
-          React.createElement(TabTemplate, {
+          React.createElement(tabTemplate || TabTemplate, {
             key: index,
             selected: this._getSelected(tab, index),
           }, tab.props.children) : undefined);
