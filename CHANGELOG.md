@@ -1,3 +1,9 @@
+## 0.12.0-a
+###### _Sep 22, 2015_
+
+##### Enhancements
+- Added tabTemplate property in Tabs component for custom tab templates.
+
 ## 0.11.1
 ###### _Sep 15, 2015_
 
